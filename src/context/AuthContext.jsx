@@ -1,0 +1,1 @@
+// this file is for the reason that i want to make a centralized system so that we dont have to use props!!
