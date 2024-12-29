@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import Header from '../others/Header'
 import TaskLists from '../others/TaskLists'
+import TaskList from '../TaskList/TaskList'
 
 const EmployeeDashboard = () => {
   return (
@@ -10,6 +11,7 @@ const EmployeeDashboard = () => {
     </div>
     <div>
         <TaskLists/>
+        <TaskList/>
     </div>
     </>
   )

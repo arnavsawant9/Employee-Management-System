@@ -2,12 +2,14 @@ import React from 'react'
 import Login from "./components/Auth/login";
 import EmployeeDashboard from './components/Dashboard/EmployeeDashboard';
 import Header from './components/others/Header';
+import AdminDashboard from './components/Dashboard/AdminDashboard';
 
 const App = () => {
   return (
     <div>
       {/* <Login/> */}
-      <EmployeeDashboard/>
+      {/* <EmployeeDashboard/> */}
+      <AdminDashboard/>
     </div>
   )
 }
