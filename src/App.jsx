@@ -9,10 +9,11 @@ import { AuthContext } from './context/AuthProvider';
 
 const App = () => {
 
+
   const [user, setUser] = useState(null);
   const [loggedInUser, setLoggedInUser] = useState(null)
   const authData = useContext(AuthContext)
-  // console.log(authData);
+ // console.log(authData);
   useEffect(() => {
     if(authData){
       const loggedUser = localStorage.getItem("loggedUser")
@@ -40,7 +41,7 @@ const App = () => {
       if(employee){
         setUser("employee");
         setLoggedInUser(employee);
-        localStorage.setItem("loggedUser", JSON.stringify({role:'employee'}))
+        localStorage.setItem("loggedUser", JSON.stringify({role:'employee', data:employee}))
       }
       //console.log("User confirmed")
     }

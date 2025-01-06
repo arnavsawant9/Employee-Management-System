@@ -36,7 +36,7 @@ const employees = [
         description: "Submit the weekly progress update.",
         date: "2024-01-07",
         category: "Update",
-        active: false,
+        active: true,
         completed: true,
         newTask: false,
         failed: false

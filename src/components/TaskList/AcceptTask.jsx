@@ -1,20 +1,19 @@
 import React from 'react'
 
 const AcceptTask = ({acceptedData}) => {
-    console.log(acceptedData.tasks)
+    // console.log(acceptedData.tasks)
   return (
     <>
-    {acceptedData.tasks.map((task, index) => (
-        <div key={index} className="h-full flex-shrink-0 w-[300px] bg-gray-800 rounded-xl p-4 flex flex-col shadow-lg transition-transform transform hover:scale-105">
+        <div className="h-full flex-shrink-0 w-[300px] bg-gray-800 rounded-xl p-4 flex flex-col shadow-lg transition-transform transform hover:scale-105">
             {/* Original Div with Priority and Date */}
             <div className="bg-red-600 rounded-xl p-2 flex items-center justify-between w-full mb-3">
-                <h2 className="text-white text-lg font-semibold px-3 py-1 rounded-md">{task.priority}</h2>
-                <h3 className="text-gray-200 font-medium">{new Date(task.date).toLocaleDateString()}</h3>
+                {/* <h2 className="text-white text-lg font-semibold px-3 py-1 rounded-md">{acceptedData.priority}</h2> */}
+                <h3 className="text-gray-200 font-medium">{new Date(acceptedData.date).toLocaleDateString()}</h3>
             </div>
 
             {/* Task Title and Description */}
-            <h1 className="text-white text-xl font-bold mb-1">{task.title}</h1>
-            <p className="text-gray-300 mb-4 overflow-hidden text-ellipsis whitespace-nowrap">{task.description}</p>
+            <h1 className="text-white text-xl font-bold mb-1">{acceptedData.title}</h1>
+            <p className="text-gray-300 mb-4 overflow-hidden text-ellipsis whitespace-nowrap">{acceptedData.description}</p>
 
             {/* Action Buttons */}
             <div className="flex gap-3 mt-auto">
@@ -22,7 +21,6 @@ const AcceptTask = ({acceptedData}) => {
                 <button className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-200 ease-in-out focus:outline-none focus:ring focus:ring-red-300">Failed</button>
             </div>
         </div>
-        ))}
     </>
   )
 }
