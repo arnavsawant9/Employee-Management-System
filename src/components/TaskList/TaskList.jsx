@@ -12,25 +12,17 @@ const TaskList = ({taskData}) => {
     <CompleteTask completedTaskData={taskData}/>
     <FailedTask failedTaskData={taskData}/> */}
     
-    {taskData.tasks.map((elem, idx)=>{
-      console.log(1);
-        if(elem.active){
-          return <AcceptTask key={idx} acceptedData={elem}/>
-        }
-        console.log(2);
-        if(elem.newTask){
-          return <NewTask key={idx} newTaskData={elem}/>
-        }
-        console.log(3);
-        if(elem.completed){
-          return <CompleteTask key={idx} completedTaskData={elem}/>
-        }
-        console.log(4);
-        if(elem.failed){
-          return <FailedTask key={idx} failedTaskData={elem}/>
-        }
-        console.log(5);
-    })}
+    {taskData.tasks.map((elem, idx) => {
+  return (
+    <React.Fragment key={idx}>
+      {elem.active && <AcceptTask acceptedData={elem} />}
+      {elem.newTask && <NewTask newTaskData={elem} />}
+      {elem.completed && <CompleteTask completedTaskData={elem} />}
+      {elem.failed && <FailedTask failedTaskData={elem} />}
+    </React.Fragment>
+  );
+  })}
+
 </div>
   
   )

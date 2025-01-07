@@ -6,7 +6,7 @@ const FailedTask = ({failedTaskData}) => {
         <div className="h-full flex-shrink-0 w-[300px] bg-gray-800 rounded-xl p-4 flex flex-col shadow-lg transition-transform transform hover:scale-105">
             {/* Original Div with Priority and Date */}
             <div className="bg-red-600 rounded-xl p-2 flex items-center justify-between w-full mb-3">
-                {/* <h2 className="text-white text-lg font-semibold px-3 py-1 rounded-md">{failedTaskData.priority}</h2> */}
+                <h2 className="text-white text-lg font-semibold px-3 py-1 rounded-md">{failedTaskData.category}</h2>
                 <h3 className="text-gray-200 font-medium">{new Date(failedTaskData.date).toLocaleDateString()}</h3>
             </div>
 

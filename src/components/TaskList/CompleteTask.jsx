@@ -4,9 +4,9 @@ const CompleteTask = ({completedTaskData}) => {
   return (
     <>
         <div className="h-full flex-shrink-0 w-[300px] bg-gray-800 rounded-xl p-4 flex flex-col shadow-lg transition-transform transform hover:scale-105">
-            {/* Original Div with Priority and Date */}
+            {/* Original Div with category and Date */}
             <div className="bg-red-600 rounded-xl p-2 flex items-center justify-between w-full mb-3">
-                {/* <h2 className="text-white text-lg font-semibold px-3 py-1 rounded-md">{completedTaskData.priority}</h2> */}
+                <h2 className="text-white text-lg font-semibold px-3 py-1 rounded-md">{completedTaskData.category}</h2>
                 <h3 className="text-gray-200 font-medium">{new Date(completedTaskData.date).toLocaleDateString()}</h3>
             </div>
 

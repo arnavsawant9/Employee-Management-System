@@ -1,8 +1,10 @@
 import React,{useState, useEffect} from 'react'
 
 const Header = ({userData}) => {
+  console.log(localStorage)
   const logOutUser = () =>{
-    localStorage.setItem(loggedUser, '')
+    localStorage.setItem("loggedUser", '')
+    window.location.reload()
   }
 
   return (
