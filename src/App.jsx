@@ -6,8 +6,17 @@ import AdminDashboard from './components/Dashboard/AdminDashboard';
 import { getLocalStorage, setLocalStorage } from './utils/localStorage';
 import { useState } from 'react';
 import { AuthContext } from './context/AuthProvider';
+// import { getDatabase, set , ref } from 'firebase/database';
+import { app } from './firebase';
+import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
+
+const auth = getAuth(app); 
 
 const App = () => {
+
+  const signupUser = () =>{
+    createUserWithEmailAndPassword(auth, "arnav.bhosale@gmail.com", "Arnav123").then((value)=> console.log(value.user.email))
+  }
 
   const [user, setUser] = useState(null);
   const [loggedInUser, setLoggedInUser] = useState(null)
@@ -51,6 +60,7 @@ const App = () => {
   // console.log(data)
   return (
     <div>
+    <button onClick={signupUser}>SignUp</button>
       {!user ? <Login handleLogin={handleLogin} />: " "}
       {user == 'admin'? <AdminDashboard/>: <EmployeeDashboard data={loggedInUser}/>}
     </div>
