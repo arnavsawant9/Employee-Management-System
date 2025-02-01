@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import Login from "./components/Auth/login";
+import Login from "./components/Auth/Login";
 import EmployeeDashboard from './components/Dashboard/EmployeeDashboard';
 import Header from './components/others/Header';
 import AdminDashboard from './components/Dashboard/AdminDashboard';
@@ -9,6 +9,7 @@ import { AuthContext } from './context/AuthProvider';
 // import { getDatabase, set , ref } from 'firebase/database';
 import { app } from './firebase';
 import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
+import SignUp from './components/Auth/Signup';
 
 const auth = getAuth(app); 
 
@@ -60,7 +61,6 @@ const App = () => {
   // console.log(data)
   return (
     <div>
-    <button onClick={signupUser}>SignUp</button>
       {!user ? <Login handleLogin={handleLogin} />: " "}
       {user == 'admin'? <AdminDashboard/>: <EmployeeDashboard data={loggedInUser}/>}
     </div>
