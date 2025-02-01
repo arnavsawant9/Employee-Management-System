@@ -76,7 +76,7 @@ const Login = ({ handleLogin }) => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            className="w-full p-4 text-lg rounded-xl border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                            className="text-black w-full p-4 text-lg rounded-xl border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                         />
                     </div>
                     <div>
@@ -86,7 +86,7 @@ const Login = ({ handleLogin }) => {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
-                            className="w-full p-4 text-lg rounded-xl border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                            className="text-black w-full p-4 text-lg rounded-xl border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                         />
                     </div>
                     <button 
