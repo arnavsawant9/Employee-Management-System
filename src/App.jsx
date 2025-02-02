@@ -10,8 +10,11 @@ import { AuthContext } from './context/AuthProvider';
 import { app } from './firebase';
 import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
 import SignUp from './components/Auth/Signup';
+import {auth, googleProvider} from "./firebase"
+import { signInWithPopup } from 'firebase/auth';
 
-const auth = getAuth(app); 
+
+
 
 const App = () => {
 

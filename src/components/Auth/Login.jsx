@@ -52,6 +52,8 @@
 
 
 import React, { useState } from 'react'
+import {auth, googleProvider} from "../../firebase"
+import { signInWithPopup } from 'firebase/auth';
 
 const Login = ({ handleLogin }) => {
     const [email, setEmail] = useState('');
@@ -64,7 +66,16 @@ const Login = ({ handleLogin }) => {
         setPassword("");
     }
 
-    return (
+    const signInWithGoogle = async()=>{
+        try{
+          await signInWithPopup(auth,googleProvider);
+          console.log("successs!!");
+        } catch(error){
+          console.log(error)
+        }
+      }
+
+      return (
         <div className="flex h-screen w-screen bg-gradient-to-r from-blue-500 to-indigo-500 items-center justify-center">
             <div className="bg-white p-12 rounded-xl shadow-lg max-w-sm w-full">
                 <h1 className="text-4xl font-semibold text-center text-gray-700 mb-8">Log In</h1>
@@ -95,6 +106,12 @@ const Login = ({ handleLogin }) => {
                     >
                         Log In
                     </button>
+                    <button 
+                        onClick={signInWithGoogle} 
+                        className="w-full py-3 mt-2 text-lg font-semibold text-gray-700 bg-white border border-gray-300 rounded-xl hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 flex items-center justify-center"
+                    >
+                        Log In with Google
+                    </button>
                 </form>
                 <div className="text-center mt-4">
                     <p className="text-sm text-gray-500">
@@ -103,7 +120,7 @@ const Login = ({ handleLogin }) => {
                 </div>
             </div>
         </div>
-    )
+    );    
 }
 
 export default Login;
